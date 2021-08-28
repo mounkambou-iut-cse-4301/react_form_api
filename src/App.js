@@ -1,19 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Student from './pages/Student';
+import Addstudent from './pages/Addstudent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-       
-          Learn React
-        
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path='/' component={Student} />
+        <Route path='/add-student' component={Addstudent} />
+      </Switch>
+    </Router>
   );
 }
 
